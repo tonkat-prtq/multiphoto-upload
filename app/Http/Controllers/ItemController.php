@@ -17,7 +17,6 @@ class ItemController extends Controller
     public function create(Request $request)
     {
         // POST
-        
         if ($request->isMethod('POST')) {
 
             // 商品情報の保存
@@ -35,8 +34,6 @@ class ItemController extends Controller
                 // photosメソッドにより、商品に紐付けられた画像を保存する
                 $item->photos()->create(['path'=> $path]);
             }
-
-            dd($request->all());
 
             return redirect('/items')->with(['success' => '保存しました']);
         }
