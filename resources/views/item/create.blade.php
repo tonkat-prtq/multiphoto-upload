@@ -7,7 +7,7 @@
 </ul>
 @endif
 <!-- フォーム -->
-<form action="{{ url('upload') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('create') }}" method="POST" enctype="multipart/form-data">
     <label for="jan">Janコード:</label>
     <input type="text" class="form-control" name="jan" value="">
     <br>
