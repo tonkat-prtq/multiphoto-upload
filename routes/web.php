@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/items', 'ItemController@index');
+Route::match(['GET', 'POST'], '/create', 'ItemController@create');
