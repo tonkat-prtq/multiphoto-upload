@@ -47,10 +47,11 @@ class ItemController extends Controller
                 $path = $e['photo']->storeAs('photos', $filename);
                 // photosメソッドにより、商品に紐付けられた画像を保存する
                 $item->photos()->create(['path'=> $path]);
-                
+
                 // dd($index, $e, $ext, $filename, $path);
             }
 
+            // 「保存しました」というフラッシュメッセージを表示し、/itemsにitems#indexを通って遷移する
             return redirect('/items')->with(['success' => '保存しました']);
         }
 
