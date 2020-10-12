@@ -16,11 +16,14 @@ class ItemController extends Controller
 
     public function create(Request $request)
     {
+
         // POST
         if ($request->isMethod('POST')) {
 
             // 商品情報の保存
             $item = Item::create([
+                // フォームから送られてきた情報が$requestに入っている
+                // Itemテーブルのjanカラムには、ユーザーの入力にアクセスしjanというフィールドの値を入れている(動的プロパティでの入力取得)
                 'jan' => $request->jan,
                 'name' => $request->name
                 ]);
